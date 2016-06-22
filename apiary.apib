@@ -1240,6 +1240,30 @@ Request parameters:
 
         "File bytes"
 
+## Result Detail Unread [/patients/{patientId}/results/{resultId}/unread]
+A scheduling service to set a message status to unread.
+
+Request parameters:
++ username (required, string, `test`) ... Technical Username used to authenticate
++ password (required, string, `test`) ... Technical Pasword used to authenticate
++ doctorId (required, number, `123456`) ... OG/Riziv Number of the doctor for which the patients are requested
++ applicationId (required, number, `1`) ... Application ID used tho identify the calling app
+
++ parameters
+    + patientId (required, number, `1`) ... Numeric `id` of the patient.
+    + resultId (required, string, `12345`) ... Result external id (any unique id)
+
+### Mark Result as unread [GET]
++ Request (application/x-www-form-urlencoded)
+
+        username=test&password=test&doctorId=123456&applicationId=1
+
+
++ Response 200 (application/json)
+
+        {
+            "success": true
+        }
 
 
 # Group Electronic Patient Record Scheduling
