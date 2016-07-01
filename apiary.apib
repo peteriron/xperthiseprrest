@@ -1165,6 +1165,113 @@ Request parameters:
                 ]
             }
         }
+        
++ Request
+    + Headers
+
+            format: basic
+            
++ Response 200 (application/json)
+
+        {
+            "subject": "general subject of the result (f.e. Lab result)",
+            "description": "description of the result (f.e. LAB400 1356154)",
+            "personList": [
+                {
+                    "name": "Dr. Camps Kim",
+                    "role": "validator"
+                }
+            ],
+            "status": "VALIDATED",
+            "medicalDate": 1418696343067,
+            "prescriber": "Dr. Colson Conny",
+            "content": [
+                {
+                    "title": "Document",
+                    "data": [
+                        {
+                            "type": "TEXT",
+                            "value": "A block of text that will contain line breaks in the format \n or \r and needs to be visualized unformatted",
+                            "valueType": {
+                                "label": "Report"
+                            }
+                        }
+                    ],
+                    "childrenTitles": []
+                },
+                {
+                    "title": "HEMATOLOGIE",
+                    "data": [
+                        {
+                            "type": "CODIFIED",
+                            "label": "Glucose",
+                            "index": "L",
+                            "value": "188",
+                            "valueComment": "Comment for this value, which also can contain line breaks",
+                            "unit": "mg/dL",
+                            "referenceValue": "70 - 100",
+                            "status": "Validated",
+                            "valueType": {
+                                "codes": [
+                                    {
+                                        "code": "GLUCO01",
+                                        "domain": "Corlab"
+                                    }
+                                ],
+                                "label": "Glucose"
+                            }
+                        },
+                        {
+                            "type": "CODIFIED",
+                            "label": "Product Ca*P",
+                            "index": "H",
+                            "value": "44.35",
+                            "valueComment": "",
+                            "unit": "mg²/dL²",
+                            "referenceValue": "< 55.0",
+                            "status": "Validated",
+                            "valueType": {
+                                "codes": [
+                                    {
+                                        "code": "CAP",
+                                        "domain": "Corlab"
+                                    }
+                                ],
+                                "label": "Ca*P"
+                            },
+                            "childrenTitles": []
+                        },
+                        {
+                            "title": "Root Title",
+                            "data": [
+                                {
+                                    "type": "FILE",
+                                    "file": "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",
+                                    "format": "PDF",
+                                    "valueType": {
+                                        "label": "Display Document"
+                                    }
+                                }
+                            ],
+                            "childrenTitles": [
+                                {
+                                    "title": "Sub Title",
+                                    "data": [
+                                        {
+                                            "type": "TEXT",
+                                            "value": "A block of text that will contain line breaks in the format \n or \r and needs to be visualized unformatted",
+                                            "valueType": {
+                                                "label": "Report"
+                                            }
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+             ]
+        }
 
 ## Result Detail LABORATORY [/patients/{patientId}/results/{resultId}/{resultDomain}{?username,password,doctorId,applicationId}]
 A patient related service that when used gives the details of a given result for a given patient
